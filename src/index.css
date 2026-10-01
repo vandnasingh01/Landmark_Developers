@@ -1,0 +1,4 @@
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body { margin: 0; background: #fffdf4; }
+#root { min-height: 100vh; }
+
