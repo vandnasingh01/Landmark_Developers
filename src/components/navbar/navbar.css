@@ -1,0 +1,34 @@
+.landmark-navbar {
+  height: 76px;
+  min-height: 76px;
+  padding: 0;
+  border-bottom: 1px solid #f0df93;
+  z-index: 1050;
+}
+
+.landmark-navbar .navbar-brand { gap: 10px; }
+.nav-logo { display: block; width: 205px; height: 74px; object-fit: contain; }
+.nav-brand-text { display: flex; flex-direction: column; line-height: 1; }
+.landmark-navbar .navbar-nav { gap: 5px; }
+.landmark-navbar .nav-link {
+  color: #454233; font-size: 14px; font-weight: 600; padding: 27px 12px !important; position: relative;
+  transition: color .2s ease;
+}
+.landmark-navbar .nav-link:hover,
+.landmark-navbar .nav-link.active { color: #a27d00; }
+.landmark-navbar .nav-link.active::after {
+  content: ""; position: absolute; bottom: 14px; left: 12px; right: 12px; height: 3px; background: #ffdc00;
+}
+.nav-phone { color: #304233; text-decoration: none; font-size: 13px; font-weight: 600; white-space: nowrap; }
+.nav-phone i { color: #a27d00; }
+.nav-enquire { background: #ffdc00; color: #302b18; border-radius: 30px; padding: 11px 20px; font-size: 13px; font-weight: 700; white-space: nowrap; }
+.nav-enquire:hover { background: #edc900; color: #302b18; }
+
+@media (max-width: 991px) {
+  .landmark-navbar { height: auto; min-height: 76px; }
+  .landmark-navbar .navbar-nav { gap: 0; margin-top: 12px !important; }
+  .nav-logo { width: 174px; height: 66px; }
+  .landmark-navbar .nav-link { padding: 11px 5px !important; }
+  .landmark-navbar .nav-link.active::after { display: none; }
+  .navbar-actions { align-items: flex-start !important; flex-direction: column; gap: 10px !important; padding: 8px 0 16px; }
+}
