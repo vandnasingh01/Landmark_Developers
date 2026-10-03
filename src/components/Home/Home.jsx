@@ -41,7 +41,6 @@ function Home() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    email: "",
     propertyType: "Farm Land / Farmhouse Plots",
     budget: "₹25 Lakh - ₹50 Lakh",
     message: "",
@@ -62,7 +61,6 @@ function Home() {
     setFormData({
       name: "",
       phone: "",
-      email: "",
       propertyType: "Farm Land / Farmhouse Plots",
       budget: "₹25 Lakh - ₹50 Lakh",
       message: "",
@@ -587,7 +585,7 @@ function Home() {
 
               <div className="mt-3">
 
-                <a href="tel:+91797812345" className="call-link">
+                <a href="tel:+917566666400" className="call-link">
                   <i className="bi bi-telephone-fill me-2"></i>
                   Talk to an Expert
                 </a>
@@ -752,7 +750,12 @@ function Home() {
                     <i className="bi bi-arrow-up-right ms-2"></i>
                   </a>
 
-                  <a href="https://wa.me/91797812345" className="whatsapp-btn">
+                  <a
+                    href="https://wa.me/917566666400?text=Hello%20Landmark%20Developers%2C%20I%20am%20interested%20in%20your%20projects."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="whatsapp-btn"
+                  >
                     <i className="bi bi-whatsapp"></i>
                     WhatsApp Us
                   </a>
@@ -807,12 +810,12 @@ function Home() {
                           </div>
                           <div>
                             <h6>Office Address</h6>
-                            <p>Landmark Developers, Jabalpur, Madhya Pradesh 482001</p>
+                            <p>A2, Landmark Developers 1285, Naagal House, Wright Town, Jabalpur, Madhya Pradesh 482002</p>
                             <small>Centrally situated with convenient highway connectivity</small>
                           </div>
                         </div>
 
-                        <div className="office-info-item">
+                        {/* <div className="office-info-item">
                           <div className="office-info-icon">
                             <i className="bi bi-clock-fill"></i>
                           </div>
@@ -821,7 +824,7 @@ function Home() {
                             <p>Monday – Saturday: 10:00 AM – 7:30 PM</p>
                             <small>Sunday: Available for Site Visits (By Appointment)</small>
                           </div>
-                        </div>
+                        </div> */}
 
                         <div className="office-info-item">
                           <div className="office-info-icon">
@@ -832,18 +835,6 @@ function Home() {
                             <p>
                               <a href="tel:+917566666400" className="contact-link">+91 7566666400</a>
 
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="office-info-item">
-                          <div className="office-info-icon">
-                            <i className="bi bi-envelope-fill"></i>
-                          </div>
-                          <div>
-                            <h6>Email Inquiries</h6>
-                            <p>
-                              <a href="mailto:info@landmarkdevelopers.com" className="contact-link">info@landmarkdevelopers.com</a>
                             </p>
                           </div>
                         </div>
@@ -869,7 +860,7 @@ function Home() {
                           Call Office Directly
                         </a>
                         <a
-                          href="https://wa.me/91797812345"
+                          href="https://wa.me/917566666400?text=Hello%20Landmark%20Developers%2C%20I%20am%20interested%20in%20your%20projects."
                           target="_blank"
                           rel="noopener noreferrer"
                           className="btn btn-directions"
@@ -962,24 +953,6 @@ function Home() {
                                     value={formData.phone}
                                     onChange={handleInputChange}
                                     placeholder="e.g. 98765 43210"
-                                    className="enquiry-input"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-
-                            {/* Email */}
-                            <div className="col-md-12">
-                              <div className="enquiry-field">
-                                <label className="enquiry-label">Email Address</label>
-                                <div className="input-icon-wrapper">
-                                  <i className="bi bi-envelope-fill"></i>
-                                  <input
-                                    type="email"
-                                    name="email"
-                                    value={formData.email}
-                                    onChange={handleInputChange}
-                                    placeholder="Enter your email address"
                                     className="enquiry-input"
                                   />
                                 </div>
@@ -1143,19 +1116,21 @@ function Home() {
 
               <div className="social-links">
 
-                <a href="#">
+                <a href="https://www.facebook.com/LandmarkDeveloperjbp/">
                   <i className="bi bi-facebook"></i>
                 </a>
 
-                <a href="#">
+                <a href="https://www.instagram.com/landmarkdevelopersofficial/">
                   <i className="bi bi-instagram"></i>
                 </a>
 
-                <a href="#">
-                  <i className="bi bi-linkedin"></i>
-                </a>
 
-                <a href="#">
+                <a
+                  href="https://wa.me/917566666400?text=Hello%20Landmark%20Developers%2C%20I%20am%20interested%20in%20your%20projects."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                >
                   <i className="bi bi-whatsapp"></i>
                 </a>
 
@@ -1219,11 +1194,6 @@ function Home() {
                   <a href="tel:+917566666400" style={{ color: "inherit", textDecoration: "none" }}>+91 7566666400</a>
                 </div>
 
-                <div>
-                  <i className="bi bi-envelope"></i>
-                  <a href="mailto:info@landmarkdevelopers.com" style={{ color: "inherit", textDecoration: "none" }}>info@landmarkdevelopers.com</a>
-                </div>
-
               </div>
 
             </div>
@@ -1251,8 +1221,11 @@ function Home() {
 
       {/* ================= FLOATING WHATSAPP ================= */}
       <a
-        href="https://wa.me/7999526642"
+        href="https://wa.me/917566666400?text=Hello%20Landmark%20Developers%2C%20I%20am%20interested%20in%20your%20projects."
+        target="_blank"
+        rel="noopener noreferrer"
         className="floating-whatsapp"
+        aria-label="Chat on WhatsApp"
       >
         <i className="bi bi-whatsapp"></i>
       </a>
