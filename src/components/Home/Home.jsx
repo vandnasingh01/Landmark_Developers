@@ -9,7 +9,7 @@ const projects = [
     status: "Ongoing",
     size: "100 - 500 Sq. Yd.",
     image:
-      "public/farm_land.avif",
+      "/farm_land.avif",
     description:
       "Premium farm land surrounded by greenery with excellent connectivity and modern development.",
   },
