@@ -42,9 +42,9 @@ const Navbar = () => {
           </ul>
 
           <div className="d-flex align-items-center gap-3 navbar-actions">
-            <a href="tel:+91797812345" className="nav-phone"><i className="bi bi-telephone-fill me-2" />+91 7566666400</a>
+            <a href="tel:+917566666400" className="nav-phone"><i className="bi bi-telephone-fill me-2" />+91 7566666400</a>
            <a
-  href="https://wa.me/91797812345"
+  href="https://wa.me/917566666400?text=Hello%20Landmark%20Developers%2C%20I%20am%20interested%20in%20your%20projects."
   className="btn nav-enquire"
   target="_blank"
   rel="noopener noreferrer"
