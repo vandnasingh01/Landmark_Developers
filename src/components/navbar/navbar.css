@@ -2,30 +2,38 @@
   height: 76px;
   min-height: 76px;
   padding: 0;
-  border-bottom: 1px solid #f0df93;
+  border-bottom: 1px solid rgba(2, 132, 199, 0.12);
   z-index: 1050;
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04) !important;
+  transition: all 0.3s ease;
 }
 
 .landmark-navbar .navbar-brand { gap: 10px; }
-.nav-logo { display: block; width: 205px; height: 74px; object-fit: contain; }
+.nav-logo { display: block; width: 205px; height: 74px; object-fit: contain; transition: transform 0.25s ease; }
+.nav-logo:hover { transform: scale(1.02); }
 .nav-brand-text { display: flex; flex-direction: column; line-height: 1; }
-.landmark-navbar .navbar-nav { gap: 5px; }
+.landmark-navbar .navbar-nav { gap: 6px; }
 .landmark-navbar .nav-link {
-  color: #454233; font-size: 14px; font-weight: 600; padding: 27px 12px !important; position: relative;
-  transition: color .2s ease;
+  color: #0f172a; font-size: 14px; font-weight: 600; padding: 27px 12px !important; position: relative;
+  transition: color .25s ease;
 }
 .landmark-navbar .nav-link:hover,
-.landmark-navbar .nav-link.active { color: #a27d00; }
+.landmark-navbar .nav-link.active { color: #0284c7; }
 .landmark-navbar .nav-link.active::after {
-  content: ""; position: absolute; bottom: 14px; left: 12px; right: 12px; height: 3px; background: #ffdc00;
+  content: ""; position: absolute; bottom: 14px; left: 12px; right: 12px; height: 3px; background: #0284c7; border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.35);
 }
-.nav-phone { color: #304233; text-decoration: none; font-size: 13px; font-weight: 600; white-space: nowrap; }
-.nav-phone i { color: #a27d00; }
-.nav-enquire { background: #ffdc00; color: #302b18; border-radius: 30px; padding: 11px 20px; font-size: 13px; font-weight: 700; white-space: nowrap; }
-.nav-enquire:hover { background: #edc900; color: #302b18; }
+.nav-phone { color: #0f172a; text-decoration: none; font-size: 13px; font-weight: 600; white-space: nowrap; transition: color 0.2s ease; }
+.nav-phone:hover { color: #0284c7; }
+.nav-phone i { color: #0284c7; }
+.nav-enquire { background: #0284c7; color: #ffffff; border-radius: 30px; padding: 11px 22px; font-size: 13px; font-weight: 700; white-space: nowrap; transition: all .25s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 4px 14px rgba(2, 132, 199, 0.28); }
+.nav-enquire:hover { background: #0369a1; color: #ffffff; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(2, 132, 199, 0.38); }
 
 @media (max-width: 991px) {
-  .landmark-navbar { height: auto; min-height: 76px; }
+  .landmark-navbar { height: auto; min-height: 76px; background-color: #ffffff !important; }
   .landmark-navbar .navbar-nav { gap: 0; margin-top: 12px !important; }
   .nav-logo { width: 174px; height: 66px; }
   .landmark-navbar .nav-link { padding: 11px 5px !important; }

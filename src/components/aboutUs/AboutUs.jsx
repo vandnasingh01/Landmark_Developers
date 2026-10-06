@@ -12,7 +12,7 @@ const AboutUs = () => {
           minHeight: "480px",
           marginTop: "76px",
           background:
-            "linear-gradient(rgba(4, 52, 39, 0.72), rgba(4, 52, 39, 0.72)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85') center/cover",
+            "linear-gradient(rgba(11, 29, 58, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85') center/cover",
         }}
       >
         <div className="container text-white">
@@ -22,7 +22,7 @@ const AboutUs = () => {
               <span
                 className="d-inline-block mb-3"
                 style={{
-                  color: "#ffe984",
+                  color: "#38bdf8",
                   letterSpacing: "3px",
                   fontSize: "11px",
                   fontWeight: "700",
@@ -40,7 +40,7 @@ const AboutUs = () => {
               >
                 Building Places.
                 <br />
-                <span style={{ color: "#ffdc00" }}>
+                <span style={{ color: "#38bdf8" }}>
                   Creating Possibilities.
                 </span>
               </h1>
@@ -49,7 +49,7 @@ const AboutUs = () => {
                 className="lead"
                 style={{
                   maxWidth: "650px",
-                  color: "#fff5ca",
+                  color: "#e2e8f0",
                   lineHeight: "1.8",
                   fontSize: "16px",
                 }}
@@ -77,7 +77,7 @@ const AboutUs = () => {
               <span
                 className="d-inline-block mb-3"
                 style={{
-                  color: "#a27d00",
+                  color: "#0284c7",
                   letterSpacing: "3px",
                   fontSize: "10px",
                   fontWeight: "800",
@@ -89,21 +89,21 @@ const AboutUs = () => {
               <h2
                 className="fw-bold mb-4"
                 style={{
-                  color: "#332f22",
+                  color: "#0f172a",
                   fontSize: "clamp(34px, 4vw, 48px)",
                   lineHeight: "1.15",
                 }}
               >
                 Real Estate With
                 <br />
-                <span style={{ color: "#a27d00" }}>
+                <span style={{ color: "#0284c7" }}>
                   Purpose.
                 </span>
               </h2>
 
               <p
                 style={{
-                  color: "#63756e",
+                  color: "#475569",
                   lineHeight: "1.9",
                   fontSize: "14px",
                 }}
@@ -115,7 +115,7 @@ const AboutUs = () => {
 
               <p
                 style={{
-                  color: "#63756e",
+                  color: "#475569",
                   lineHeight: "1.9",
                   fontSize: "14px",
                 }}
@@ -127,7 +127,7 @@ const AboutUs = () => {
 
               <p
                 style={{
-                  color: "#63756e",
+                  color: "#475569",
                   lineHeight: "1.9",
                   fontSize: "14px",
                 }}
@@ -173,8 +173,8 @@ const AboutUs = () => {
                     style={{
                       width: "45px",
                       height: "45px",
-                      background: "#fff4b8",
-                      color: "#a27d00",
+                      background: "#e0f2fe",
+                      color: "#0284c7",
                     }}
                   >
                     <i className="bi bi-house-heart fs-5"></i>

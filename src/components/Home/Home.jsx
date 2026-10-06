@@ -37,6 +37,59 @@ const projects = [
   },
 ];
 
+// Editable Awards & Recognition Data Structure
+// Easily replace award titles, organization names, years, or images when provided by client.
+const awardsData = [
+  {
+    id: 1,
+    title: "Excellence in Development",
+    category: "Industry Recognition",
+    year: "",
+    organization: "",
+    image: "",
+    iconBadge: "bi bi-trophy-fill",
+    iconFeature: "bi bi-patch-check-fill",
+    description:
+      "Recognized for quality plot planning, infrastructure standards, and customer satisfaction.",
+  },
+  {
+    id: 2,
+    title: "Trusted Real Estate Partner",
+    category: "Milestone Achievement",
+    year: "",
+    organization: "",
+    image: "",
+    iconBadge: "bi bi-award-fill",
+    iconFeature: "bi bi-shield-check",
+    description:
+      "Honored for transparent documentation, client trust, and ethical business practices in Jabalpur.",
+  },
+  {
+    id: 3,
+    title: "Prime Land Developments",
+    category: "Excellence Award",
+    year: "",
+    organization: "",
+    image: "",
+    iconBadge: "bi bi-star-fill",
+    iconFeature: "bi bi-geo-alt-fill",
+    description:
+      "Acknowledged for delivering premium farmland and residential plotted communities in strategic locations.",
+  },
+  {
+    id: 4,
+    title: "Customer Choice & Leadership",
+    category: "Client Honor",
+    year: "",
+    organization: "",
+    image: "",
+    iconBadge: "bi bi-ribbon-fill",
+    iconFeature: "bi bi-people-fill",
+    description:
+      "Commended for exceptional client service, transparent guidance, and dedicated site tour assistance.",
+  },
+];
+
 function Home() {
   const [formData, setFormData] = useState({
     name: "",
@@ -141,7 +194,8 @@ function Home() {
       </section>
 
 
-      {/* ================= PROJECTS ================= */}
+      {/* ================= PROJECTS & GALLERY ================= */}
+      <div id="gallery"></div>
       <section id="projects" className="projects-section section-padding">
 
         <div className="container">
@@ -418,127 +472,56 @@ function Home() {
       </section>
 
 
-      {/* ================= CUSTOMER JOURNEY ================= */}
-      <section className="journey-section section-padding">
+      {/* ================= AWARDS & RECOGNITION ================= */}
+      <div id="awards"></div>
+      <section id="testimonials" className="journey-section section-padding">
 
         <div className="container">
 
           <div className="text-center section-heading">
 
             <span className="section-label">
-              SIMPLE & CONVENIENT
+              AWARDS &amp; RECOGNITION
             </span>
 
             <h2>
-              From Dream
-              <span> to Destination.</span>
+              Recognized for <span>Excellence</span>
             </h2>
 
             <p>
-              We make your property journey simple, transparent
-              and convenient.
+              Celebrating milestones, achievements and recognition that reflect our commitment to excellence in real estate.
             </p>
 
           </div>
 
 
-          <div className="row journey-row">
+          <div className="row journey-row g-4">
+            {awardsData.map((award) => (
+              <div className="col-lg-3 col-md-6" key={award.id}>
+                <div className="journey-card award-card">
+                  {award.image ? (
+                    <img src={award.image} alt={award.title} className="award-image-img mb-3" />
+                  ) : (
+                    <div className="journey-number award-badge">
+                      <i className={award.iconBadge}></i>
+                    </div>
+                  )}
 
-            <div className="col-lg-3 col-md-6">
+                  <div className="journey-icon award-icon">
+                    <i className={award.iconFeature}></i>
+                  </div>
 
-              <div className="journey-card">
+                  <h4>{award.title}</h4>
 
-                <div className="journey-number">
-                  01
+                  {award.organization && <span className="award-org">{award.organization}</span>}
+                  {award.year && <span className="award-year-chip">{award.year}</span>}
+
+                  <span className="award-tag">{award.category}</span>
+
+                  <p>{award.description}</p>
                 </div>
-
-                <div className="journey-icon">
-                  <i className="bi bi-search"></i>
-                </div>
-
-                <h4>Explore</h4>
-
-                <p>
-                  Discover projects that match your
-                  requirements and investment goals.
-                </p>
-
               </div>
-
-            </div>
-
-
-            <div className="col-lg-3 col-md-6">
-
-              <div className="journey-card">
-
-                <div className="journey-number">
-                  02
-                </div>
-
-                <div className="journey-icon">
-                  <i className="bi bi-info-circle"></i>
-                </div>
-
-                <h4>Understand</h4>
-
-                <p>
-                  Explore project details, amenities,
-                  location and connectivity.
-                </p>
-
-              </div>
-
-            </div>
-
-
-            <div className="col-lg-3 col-md-6">
-
-              <div className="journey-card">
-
-                <div className="journey-number">
-                  03
-                </div>
-
-                <div className="journey-icon">
-                  <i className="bi bi-calendar2-check"></i>
-                </div>
-
-                <h4>Visit</h4>
-
-                <p>
-                  Schedule a convenient site visit and
-                  experience the property yourself.
-                </p>
-
-              </div>
-
-            </div>
-
-
-            <div className="col-lg-3 col-md-6">
-
-              <div className="journey-card">
-
-                <div className="journey-number">
-                  04
-                </div>
-
-                <div className="journey-icon">
-                  <i className="bi bi-house-heart"></i>
-                </div>
-
-                <h4>Decide</h4>
-
-                <p>
-                  Get expert guidance and take the next
-                  step with confidence.
-                </p>
-
-              </div>
-
-            </div>
-
+            ))}
           </div>
 
         </div>
@@ -648,7 +631,7 @@ function Home() {
                   New project coming soon in Jabalpur
                 </h4>
 
-                <a href="#">
+                <a href="#contact-enquiry">
                   Read More
                   <i className="bi bi-arrow-right ms-2"></i>
                 </a>
@@ -672,7 +655,7 @@ function Home() {
                   Weekend site visit slots are now available
                 </h4>
 
-                <a href="#">
+                <a href="#contact-enquiry">
                   Read More
                   <i className="bi bi-arrow-right ms-2"></i>
                 </a>
@@ -696,7 +679,7 @@ function Home() {
                   Development work progressing at Vistara Farms
                 </h4>
 
-                <a href="#">
+                <a href="#contact-enquiry">
                   Read More
                   <i className="bi bi-arrow-right ms-2"></i>
                 </a>
@@ -874,125 +857,76 @@ function Home() {
                   </div>
                 </div>
 
-                {/* Right: Contact / Enquiry Form Pane */}
+                {/* Right: Contact CTA Pane */}
                 <div id="enquiry-form" className="col-lg-7">
-                  <div className="enquiry-form-pane h-100">
-                    {isSubmitted ? (
-                      <div className="enquiry-success-card">
-                        <div className="success-icon-circle">
-                          <i className="bi bi-check-circle-fill"></i>
-                        </div>
-                        <h4 className="fw-bold mb-2" style={{ color: "var(--landmark-dark)" }}>
-                          Enquiry Received Successfully!
-                        </h4>
-                        <p className="text-muted mb-3" style={{ fontSize: "14px", lineHeight: "1.6" }}>
-                          Thank you <strong>{formData.name || "valued customer"}</strong>. Our real estate advisor
-                          will contact you shortly at <strong>{formData.phone}</strong> regarding{" "}
-                          <strong>{formData.propertyType}</strong>.
-                        </p>
-                        <div className="d-flex justify-content-center gap-2">
-                          <button
-                            type="button"
-                            className="btn btn-reset-form"
-                            onClick={handleResetForm}
-                          >
-                            <i className="bi bi-arrow-counterclockwise me-1"></i>
-                            Send Another Enquiry
-                          </button>
-                        </div>
-                      </div>
-                    ) : (
-                      <>
-                        <div className="enquiry-form-header">
-                          <span className="enquiry-badge">
-                            <i className="bi bi-pencil-square"></i>
-                            SEND AN ENQUIRY
-                          </span>
-                          <h4 className="enquiry-title">Get in Touch with Our Experts</h4>
-                          <p className="enquiry-desc">
-                            Fill out your requirements below and our property advisors will share layout plans,
-                            pricing and arrange a private site visit.
-                          </p>
-                        </div>
+                  <div className="enquiry-form-pane d-flex flex-column justify-content-center h-100 p-4 p-md-5">
+                    <div className="enquiry-form-header mb-4">
+                      <span className="enquiry-badge mb-2">
+                        <i className="bi bi-chat-heart-fill me-1"></i>
+                        LET'S CONNECT
+                      </span>
+                      <h3 className="enquiry-title fs-2 fw-bold mt-2">Let’s Connect with Landmark</h3>
+                      <p className="enquiry-desc fs-6 text-secondary mt-2" style={{ lineHeight: "1.7" }}>
+                        Explore our projects, get assistance with property details, or schedule a site visit with our team.
+                      </p>
+                    </div>
 
-                        <form onSubmit={handleFormSubmit}>
-                          <div className="row g-3">
-                            {/* Full Name */}
-                            <div className="col-md-6">
-                              <div className="enquiry-field">
-                                <label className="enquiry-label">
-                                  Full Name <span>*</span>
-                                </label>
-                                <div className="input-icon-wrapper">
-                                  <i className="bi bi-person-fill"></i>
-                                  <input
-                                    type="text"
-                                    name="name"
-                                    required
-                                    value={formData.name}
-                                    onChange={handleInputChange}
-                                    placeholder="Enter your name"
-                                    className="enquiry-input"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-
-                            {/* Phone Number */}
-                            <div className="col-md-6">
-                              <div className="enquiry-field">
-                                <label className="enquiry-label">
-                                  Phone Number <span>*</span>
-                                </label>
-                                <div className="input-icon-wrapper">
-                                  <i className="bi bi-telephone-fill"></i>
-                                  <input
-                                    type="tel"
-                                    name="phone"
-                                    required
-                                    value={formData.phone}
-                                    onChange={handleInputChange}
-                                    placeholder="e.g. 98765 43210"
-                                    className="enquiry-input"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-
-
-                            {/* Message / Requirement */}
-                            <div className="col-12">
-                              <div className="enquiry-field">
-                                <label className="enquiry-label">Message / Specific Requirements</label>
-                                <div className="input-icon-wrapper">
-                                  <i className="bi bi-chat-left-text-fill"></i>
-                                  <textarea
-                                    name="message"
-                                    value={formData.message}
-                                    onChange={handleInputChange}
-                                    placeholder="Tell us about your preferred plot size, location in Jabalpur, or preferred timeline..."
-                                    rows="3"
-                                    className="enquiry-textarea"
-                                  ></textarea>
-                                </div>
-                              </div>
-                            </div>
-
-                            {/* Submit Button */}
-                            <div className="col-12">
-                              <button type="submit" className="enquiry-submit-btn">
-                                <span>Submit Property Enquiry</span>
-                                <i className="bi bi-arrow-right-circle-fill"></i>
-                              </button>
-                              <p className="form-privacy-note">
-                                <i className="bi bi-shield-check me-1"></i>
-                                Your information is 100% confidential and never shared with third parties.
-                              </p>
-                            </div>
+                    <div className="d-flex flex-column gap-3 mt-2">
+                      {/* Action 1: Call Us */}
+                      <a
+                        href="tel:+917566666400"
+                        className="contact-cta-card d-flex align-items-center justify-content-between p-3 rounded-4 border text-decoration-none"
+                      >
+                        <div className="d-flex align-items-center gap-3">
+                          <div className="cta-icon-box rounded-circle bg-primary bg-opacity-10 text-primary d-flex align-items-center justify-content-center" style={{ width: "48px", height: "48px", minWidth: "48px" }}>
+                            <i className="bi bi-telephone-fill fs-5"></i>
                           </div>
-                        </form>
-                      </>
-                    )}
+                          <div>
+                            <h6 className="fw-bold mb-1 text-dark">Call Us Directly</h6>
+                            <small className="text-muted">+91 7566666400 • Instant Consultation</small>
+                          </div>
+                        </div>
+                        <i className="bi bi-arrow-right-short fs-3 text-primary"></i>
+                      </a>
+
+                      {/* Action 2: WhatsApp Us */}
+                      <a
+                        href="https://wa.me/917566666400?text=Hello%20Landmark%20Developers%2C%20I%20am%20interested%20in%20your%20projects."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="contact-cta-card d-flex align-items-center justify-content-between p-3 rounded-4 border text-decoration-none"
+                      >
+                        <div className="d-flex align-items-center gap-3">
+                          <div className="cta-icon-box rounded-circle bg-success bg-opacity-10 text-success d-flex align-items-center justify-content-center" style={{ width: "48px", height: "48px", minWidth: "48px" }}>
+                            <i className="bi bi-whatsapp fs-5"></i>
+                          </div>
+                          <div>
+                            <h6 className="fw-bold mb-1 text-dark">Chat on WhatsApp</h6>
+                            <small className="text-muted">Get layout plans &amp; instant replies</small>
+                          </div>
+                        </div>
+                        <i className="bi bi-arrow-right-short fs-3 text-success"></i>
+                      </a>
+
+                      {/* Action 3: Schedule a Site Visit */}
+                      <a
+                        href="https://wa.me/917566666400?text=Hello%20Landmark%20Developers%2C%20I%20would%20like%20to%20schedule%20a%20site%20visit."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="contact-cta-card primary-cta d-flex align-items-center justify-content-between p-3 rounded-4 border text-decoration-none"
+                      >
+                        <div className="d-flex align-items-center gap-3">
+                          <div className="cta-icon-box rounded-circle bg-white text-primary d-flex align-items-center justify-content-center" style={{ width: "48px", height: "48px", minWidth: "48px" }}>
+                            <i className="bi bi-calendar-check-fill fs-5"></i>
+                          </div>
+                          <div>
+                            <h6 className="fw-bold mb-1 text-white">Schedule a Site Visit</h6>
+                            <small style={{ color: "#e0f2fe" }}>Site tour pickup available in Jabalpur</small>
+                          </div>
+                        </div>
+                        <i className="bi bi-arrow-right-short fs-3 text-white"></i>
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -1158,8 +1092,8 @@ function Home() {
               <a href="#updates">Announcements</a>
               <a href="#contact">Contact</a>
               <a href="#office-location">Our Office Location</a>
-              <a href="#">Site Visit</a>
-              <a href="#">Enquiry</a>
+              <a href="#contact-enquiry">Site Visit</a>
+              <a href="#enquiry-form">Enquiry</a>
 
             </div>
 
@@ -1184,7 +1118,7 @@ function Home() {
                       <br />
                       Madhya Pradesh
                       <br />
-                      <small style={{ color: "#ffdc00", textDecoration: "underline" }}>View on Google Maps →</small>
+                      <small style={{ color: "#38bdf8", textDecoration: "underline" }}>View on Google Maps →</small>
                     </span>
                   </a>
                 </div>
@@ -1208,8 +1142,8 @@ function Home() {
             </span>
 
             <div>
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms & Conditions</a>
+              <a href="#home">Privacy Policy</a>
+              <a href="#home">Terms & Conditions</a>
             </div>
 
           </div>

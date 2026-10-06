@@ -9,8 +9,8 @@ const Navbar = () => {
     { label: "Home", to: "/#home", target: "home" },
     { label: "About Us", to: "/#about", target: "about" },
     { label: "Projects", to: "/#projects", target: "projects" },
-    { label: "Gallery", to: "/#projects", target: "gallery" },
-    { label: "Feedback", to: "/#contact", target: "feedback" },
+    { label: "Gallery", to: "/#gallery", target: "gallery" },
+    { label: "Awards & Recognition", to: "/#testimonials", target: "testimonials" },
     { label: "Contact", to: "/#contact", target: "contact" },
   ];
   const closeMenu = () => {
